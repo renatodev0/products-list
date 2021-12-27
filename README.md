@@ -8,26 +8,26 @@
 </p>
 
 ## Setup Config
-1 - Definir uma conexão com um servidor mysql no 'env.example'
-2 - Criar um banco chamado 'products' no servidor definido.
-3 - Rodar 'composer update' & 'composer install'
-4 - Rodar 'php artisan key:generate'
-5 - Rodar 'php artisan migrate'
-6 - Rodar 'php artisan serve' para iniciar o projeto
+1 - Definir uma conexão com um servidor mysql no 'env.example'<br/>
+2 - Criar um banco chamado 'products' no servidor definido.<br/>
+3 - Rodar 'composer update' & 'composer install'<br/>
+4 - Rodar 'php artisan key:generate'<br/>
+5 - Rodar 'php artisan migrate'<br/>
+6 - Rodar 'php artisan serve' para iniciar o projeto<br/>
 
 ## SQL Relatório
 
-SELECT 
-  PRODUCT_TAGS.tag_id as TAG, 
-  TAGS.name as NOME, 
-  count(PRODUCT_TAGS.product_id) as 'TOTAL DE PRODUTOS' 
-FROM 
-  products.product_tags as PRODUCT_TAGS 
-  inner join products.tags as TAGS on PRODUCT_TAGS.tag_id = TAGS.id 
-group by 
-  tag_id 
-order by 
-  'TOTAL DE PRODUTOS' desc;
+SELECT <br/>
+  PRODUCT_TAGS.tag_id as TAG, <br/>
+  TAGS.name as NOME, <br/>
+  count(PRODUCT_TAGS.product_id) as 'TOTAL DE PRODUTOS' <br/>
+FROM <br/>
+  products.product_tags as PRODUCT_TAGS <br/>
+  inner join products.tags as TAGS on PRODUCT_TAGS.tag_id = TAGS.id <br/>
+group by <br/>
+  tag_id <br/>
+order by <br/>
+  'TOTAL DE PRODUTOS' desc;<br/>
 
 
 ## About Laravel
