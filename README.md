@@ -7,6 +7,29 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Setup Config
+1 - Definir uma conexão com um servidor mysql no 'env.example'
+2 - Criar um banco chamado 'products' no servidor definido.
+3 - Rodar 'composer update' & 'composer install'
+4 - Rodar 'php artisan key:generate'
+5 - Rodar 'php artisan migrate'
+6 - Rodar 'php artisan serve' para iniciar o projeto
+
+## SQL Relatório
+
+SELECT 
+  PRODUCT_TAGS.tag_id as TAG, 
+  TAGS.name as NOME, 
+  count(PRODUCT_TAGS.product_id) as 'TOTAL DE PRODUTOS' 
+FROM 
+  products.product_tags as PRODUCT_TAGS 
+  inner join products.tags as TAGS on PRODUCT_TAGS.tag_id = TAGS.id 
+group by 
+  tag_id 
+order by 
+  'TOTAL DE PRODUTOS' desc;
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
