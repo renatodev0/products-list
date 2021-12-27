@@ -17,17 +17,17 @@
 
 ## SQL Relatório
 
-SELECT <br/>
-  PRODUCT_TAGS.tag_id as TAG, <br/>
-  TAGS.name as NOME, <br/>
-  count(PRODUCT_TAGS.product_id) as 'TOTAL DE PRODUTOS' <br/>
-FROM <br/>
-  products.product_tags as PRODUCT_TAGS <br/>
-  inner join products.tags as TAGS on PRODUCT_TAGS.tag_id = TAGS.id <br/>
-group by <br/>
-  tag_id <br/>
-order by <br/>
-  'TOTAL DE PRODUTOS' desc;<br/>
+SELECT 
+  PRODUCT_TAGS.tag_id as TAG, 
+  TAGS.name as NOME, 
+  count(PRODUCT_TAGS.product_id) as 'TOTAL DE PRODUTOS' 
+FROM 
+  products.product_tags as PRODUCT_TAGS 
+  inner join products.tags as TAGS on PRODUCT_TAGS.tag_id = TAGS.id 
+group by 
+  tag_id 
+order by 
+  'TOTAL DE PRODUTOS' desc;
 
 
 ## About Laravel
